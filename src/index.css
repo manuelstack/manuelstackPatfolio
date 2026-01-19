@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark, technical palette */
+    --background: 0 0% 4%;
+    --foreground: 45 10% 92%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 45 10% 92%;
+
+    --popover: 0 0% 6%;
+    --popover-foreground: 45 10% 92%;
+
+    --primary: 45 10% 92%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 45 10% 92%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 50%;
+
+    --accent: 38 90% 55%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 45 10% 92%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 38 90% 55%;
+
+    --radius: 0.25rem;
+
+    /* Custom tokens */
+    --text-secondary: 0 0% 50%;
+    --surface-elevated: 0 0% 8%;
+    --glow-accent: 38 90% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    @apply tracking-tight;
+  }
+
+  ::selection {
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .font-display {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+
+  .text-secondary {
+    color: hsl(var(--text-secondary));
+  }
+
+  .text-accent {
+    color: hsl(var(--accent));
+  }
+
+  .bg-glow {
+    box-shadow: 0 0 80px -20px hsl(var(--glow-accent) / 0.3);
+  }
+
+  .border-glow {
+    box-shadow: 0 0 20px -5px hsl(var(--glow-accent) / 0.2);
+  }
+}
+
+@layer components {
+  .container-narrow {
+    @apply mx-auto w-full max-w-[1400px] px-6 md:px-12 lg:px-24;
+  }
+
+  .section-spacing {
+    @apply py-24 md:py-32 lg:py-40;
+  }
+
+  .headline-xl {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-bold leading-[0.95] tracking-tight;
+  }
+
+  .headline-lg {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-[1] tracking-tight;
+  }
+
+  .body-lg {
+    @apply text-lg md:text-xl leading-relaxed;
+  }
+
+  .code-tag {
+    @apply font-mono text-xs px-2 py-1 bg-muted text-accent rounded border border-border;
+  }
+
+  .terminal-window {
+    @apply bg-card/80 backdrop-blur-sm border border-border rounded-lg overflow-hidden;
+    box-shadow: 0 0 40px hsl(var(--accent) / 0.05);
+  }
+
+  .link-underline {
+    @apply relative inline-block;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-px bg-accent origin-left scale-x-0 transition-transform duration-300;
+  }
+
+  .link-underline:hover::after {
+    @apply scale-x-100;
+  }
+
+  .grid-bg {
+    background-image: 
+      linear-gradient(to right, hsl(0 0% 15% / 0.3) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(0 0% 15% / 0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .noise-bg {
+    position: relative;
+  }
+
+  .noise-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+  }
+
+  /* Magnetic button effect */
+  .magnetic-btn {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+
+  .magnetic-btn::before {
+    content: '';
+    @apply absolute inset-0 bg-accent/20 scale-0 rounded-full transition-transform duration-500;
+  }
+
+  .magnetic-btn:hover::before {
+    @apply scale-150;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent));
+}
+
+/* Smooth page transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Text gradient utility */
+.text-gradient {
+  background: linear-gradient(135deg, hsl(var(--foreground)), hsl(var(--accent)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
