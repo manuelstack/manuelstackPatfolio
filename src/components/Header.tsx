@@ -26,7 +26,7 @@ const Header = () => {
           href="#" 
           className="font-mono text-sm text-accent hover:text-foreground transition-colors duration-300"
         >
-          ~/manuelStack
+          ~/dev
         </a>
         
         <ul className="hidden md:flex items-center gap-8">

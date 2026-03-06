@@ -7,7 +7,7 @@ import profileImage from "@/assets/profile-styled.jpg";
 const socialLinks = [
   { icon: Github, href: "https://github.com/manuelstack", label: "GitHub" },
   { icon: Linkedin, href: "https://linkedin.com/in/manuelstack", label: "LinkedIn" },
-  { icon: Twitter, href: "https://x.com/manuel_stack", label: "Twitter" },
+  { icon: Twitter, href: "https://twitter.com/manuelstack", label: "Twitter" },
   { icon: Mail, href: "mailto:emmanueloni211@gmail.com", label: "Email" },
 ];
 

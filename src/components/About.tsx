@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import { Download } from "lucide-react";
-import { Button } from "./ui/button";
 
 const About = () => {
   return (
@@ -37,27 +35,14 @@ const About = () => {
               <p>
                 Hi, I'm <span className="text-foreground font-medium">Ayomide Oni Emmanuel</span>, 
                 known as <span className="text-accent font-medium">Manuel Stack</span>. 
-                Solution-oriented problem solver with 2 years of experience building and maintaining 
-                software applications. Highly skilled in communication, collaboration, and technical documentation.
-              </p>
-              <p>
-                Currently pursuing a Bachelor of Arts in Creative Arts at Tai Solarin University 
-                of Education (TASUED), graduating in 2026. Based in Lagos, Nigeria.
+                 Senior software engineer with deep expertise in building secure, scalable full-stack 
+                applications. Proficient in JavaScript/TypeScript, Python, Go, and modern cloud infrastructure. 
+                Passionate about application security, system design, and developer tooling.
               </p>
               <p className="text-foreground">
-                I build full-stack applications with JavaScript, React, and modern web technologies 
-                — focusing on clean architecture, usability, and scalability.
+                I architect and build production systems using Next.js, Go, and Python 
+                — focusing on security-first design, microservices, and high-availability infrastructure.
               </p>
-              
-              <Button
-                asChild
-                className="mt-4 gap-2"
-              >
-                <a href="/resume.png" download="Ayomide_Oni_Emmanuel_Resume.png">
-                  <Download className="w-4 h-4" />
-                  Download Resume
-                </a>
-              </Button>
             </motion.div>
             
             {/* Work Experience */}
@@ -73,6 +58,20 @@ const About = () => {
                 <div>
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                     <div>
+                      <span className="text-foreground font-medium">Software Engineer</span>
+                      <span className="text-muted-foreground"> @ Tenex (Contract)</span>
+                    </div>
+                    <span className="font-mono text-xs text-muted-foreground">2024</span>
+                  </div>
+                  <ul className="space-y-1 text-sm text-muted-foreground">
+                    <li>• Built and shipped a full-featured cloud-based code editor</li>
+                    <li>• Developed a vibe coding tool integrating AI-assisted code generation</li>
+                    <li>• Architected real-time collaboration features with WebSocket infrastructure</li>
+                  </ul>
+                </div>
+                <div>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                    <div>
                       <span className="text-foreground font-medium">Software Developer (Full-Stack)</span>
                       <span className="text-muted-foreground"> @ Freelance / Remote</span>
                     </div>
@@ -82,18 +81,6 @@ const About = () => {
                     <li>• Built and maintained full-stack applications using JavaScript</li>
                     <li>• Implemented user authentication and authorization systems</li>
                     <li>• Developed and consumed REST APIs for frontend-backend communication</li>
-                  </ul>
-                </div>
-                <div>
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-                    <div>
-                      <span className="text-foreground font-medium">Software Developer (Intern / Trainee)</span>
-                    </div>
-                  </div>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    <li>• Assisted in developing full-stack features for learning and real-world projects</li>
-                    <li>• Debugged issues and improved application performance</li>
-                    <li>• Gained hands-on experience with databases and authentication workflows</li>
                   </ul>
                 </div>
               </div>
@@ -134,12 +121,12 @@ const About = () => {
               <p className="font-mono text-xs text-accent mb-8">// skills</p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
                 {[
-                  { label: "Languages", items: ["JavaScript (ES6+)", "HTML5", "CSS3"] },
-                  { label: "Frontend", items: ["React", "Responsive UI", "Tailwind CSS"] },
-                  { label: "Backend", items: ["REST APIs", "Authentication", "Backend Logic"] },
-                  { label: "Databases", items: ["Firebase", "Supabase"] },
-                  { label: "Tools", items: ["Git", "GitHub", "VS Code"] },
-                  { label: "Concepts", items: ["Security Basics", "System Design"] },
+                  { label: "Languages", items: ["TypeScript", "Python", "Go", "JavaScript (ES6+)"] },
+                  { label: "Frontend", items: ["Next.js", "React", "Tailwind CSS", "Framer Motion"] },
+                  { label: "Backend", items: ["Go (Gin/Fiber)", "Python (FastAPI/Django)", "Node.js", "gRPC"] },
+                  { label: "Databases", items: ["PostgreSQL", "Redis", "MongoDB", "ClickHouse"] },
+                  { label: "DevOps", items: ["Docker", "Kubernetes", "Terraform", "CI/CD", "AWS"] },
+                  { label: "Security", items: ["OWASP Top 10", "Pen Testing", "Auth/AuthZ", "Threat Modeling"] },
                 ].map((category) => (
                   <div key={category.label}>
                     <p className="text-sm font-medium text-foreground mb-3">{category.label}</p>
